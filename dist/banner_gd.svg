@@ -19,10 +19,163 @@
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Fira+Code:wght@400;600&amp;display=swap');
   
   @keyframes breathe { 0%,100%{opacity:.6} 50%{opacity:1} }
-  @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+  @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+  
+  /* MEGA-LOOP: 30s total. 
+     Cycle 1 (0-33.3%): Run straight across.
+     Cycle 2 (33.3-66.6%): Run straight across.
+     Cycle 3 (66.6-100%): Stop in middle, explode, and Steve gets blasted away. */
+     
+  @keyframes creeperMove { 
+    /* Cycle 1: Run Past completely off screen */
+    0% { transform:translate(-100px, 89px); } 
+    31% { transform:translate(1100px, 89px); }
+    /* Instant snap back */
+    31.01% { transform:translate(-100px, 89px); }
+    
+    /* Cycle 2: Run Past */
+    33.3% { transform:translate(-100px, 89px); }
+    64.3% { transform:translate(1100px, 89px); }
+    /* Instant snap back */
+    64.31% { transform:translate(-100px, 89px); }
+    
+    /* Cycle 3: The Stop and Explode */
+    66.6% { transform:translate(-100px, 89px); }
+    76.6%, 93% { transform:translate(380px, 89px); } /* Stops at center */
+    /* Instant snap back offscreen after explosion */
+    93.01%, 100% { transform:translate(-100px, 89px); } 
+  }
+  
+  @keyframes steveMove { 
+    /* Cycle 1: Run Past completely off screen */
+    0% { transform:translate(-40px, 85px); } 
+    31% { transform:translate(1150px, 85px); }
+    /* Instant snap back */
+    31.01% { transform:translate(-40px, 85px); }
+    
+    /* Cycle 2: Run Past */
+    33.3% { transform:translate(-40px, 85px); }
+    64.3% { transform:translate(1150px, 85px); }
+    /* Instant snap back */
+    64.31% { transform:translate(-40px, 85px); }
+    
+    /* Cycle 3: The Stop and Explode */
+    66.6% { transform:translate(-40px, 85px); }
+    75.6%, 91% { transform:translate(440px, 85px) rotate(0deg); } /* Stops */
+    
+    /* 92% is when blast happens - Steve gets launched up and forward! */
+    94% { transform:translate(600px, -50px) rotate(90deg); } 
+    96% { transform:translate(1000px, -200px) rotate(180deg); } /* Offscreen sky */
+    /* Instant snap back */
+    96.01%, 100% { transform:translate(-40px, 85px) rotate(0deg); }
+  }
+  
+  /* Bouncing only while actually running */
+  @keyframes walkBounce { 
+    /* Cycle 1 */
+    0%, 30% { transform:translateY(0); }
+    3%, 6%, 9%, 12%, 15%, 18%, 21%, 24%, 27% { transform:translateY(-2px); }
+    /* Cycle 2 */
+    33.3%, 63.3% { transform:translateY(0); }
+    36%, 39%, 42%, 45%, 48%, 51%, 54%, 57%, 60% { transform:translateY(-2px); }
+    /* Cycle 3 */
+    66.6%, 76.6% { transform:translateY(0); }
+    69%, 72%, 75% { transform:translateY(-2px); }
+    77%, 100% { transform:translateY(0); }
+  }
+  
+  /* Limb rotations only while moving */
+  @keyframes legA { 
+    /* Cycle 1 */
+    0%, 30% { transform:rotate(0deg); }
+    1.5%, 7.5%, 13.5%, 19.5%, 25.5% { transform:rotate(-25deg); }
+    4.5%, 10.5%, 16.5%, 22.5%, 28.5% { transform:rotate(25deg); }
+    /* Cycle 2 */
+    33.3%, 63.3% { transform:rotate(0deg); }
+    34.8%, 40.8%, 46.8%, 52.8%, 58.8% { transform:rotate(-25deg); }
+    37.8%, 43.8%, 49.8%, 55.8%, 61.8% { transform:rotate(25deg); }
+    /* Cycle 3 */
+    66.6%, 76.6% { transform:rotate(0deg); }
+    68.1%, 74.1% { transform:rotate(-25deg); }
+    71.1% { transform:rotate(25deg); }
+    /* Limbs flail when Steve is blown up */
+    92%, 96% { transform:rotate(45deg); }
+    100% { transform:rotate(0deg); }
+  }
+  @keyframes legB { 
+    /* Opposite rotation */
+    /* Cycle 1 */
+    0%, 30% { transform:rotate(0deg); }
+    1.5%, 7.5%, 13.5%, 19.5%, 25.5% { transform:rotate(25deg); }
+    4.5%, 10.5%, 16.5%, 22.5%, 28.5% { transform:rotate(-25deg); }
+    /* Cycle 2 */
+    33.3%, 63.3% { transform:rotate(0deg); }
+    34.8%, 40.8%, 46.8%, 52.8%, 58.8% { transform:rotate(25deg); }
+    37.8%, 43.8%, 49.8%, 55.8%, 61.8% { transform:rotate(-25deg); }
+    /* Cycle 3 */
+    66.6%, 76.6% { transform:rotate(0deg); }
+    68.1%, 74.1% { transform:rotate(25deg); }
+    71.1% { transform:rotate(-25deg); }
+    /* Limbs flail when Steve is blown up */
+    92%, 96% { transform:rotate(-45deg); }
+    100% { transform:rotate(0deg); }
+  }
+
+  /* Sweating while running */
+  @keyframes sweatDrop {
+    0%, 30%, 33.3%, 63.3%, 66.6%, 76.6% { opacity: 1; transform:translateY(0); }
+    10%, 20%, 43%, 53%, 71% { opacity: 0; transform:translateY(5px); }
+    31%, 33.2%, 64%, 66.5%, 77%, 100% { opacity: 0; }
+  }
+  
+  /* Creeper explosion sequence (only in Cycle 3) */
+  /* NO OPACITY fades. Just solid flash right before popping to 0 scale. */
+  @keyframes creeperFlash {
+    0%, 88% { filter: brightness(1); }
+    89%, 91% { filter: brightness(3) sepia(1) hue-rotate(-50deg) saturate(3); } /* Flashes white/bright */
+    92%, 100% { filter: brightness(1); }
+  }
+  @keyframes creeperSwell {
+    0%, 89% { transform: scale(1) translateY(0); }
+    92% { transform: scale(1.4) translateY(-6px); }
+    /* Instantly disppear right when explosion hits */
+    92.01%, 100% { transform: scale(0); }
+  }
+  
+  /* Explosion Particle Effects */
+  @keyframes blast {
+    0%, 92% { opacity: 0; transform: scale(0.5); }
+    93% { opacity: 1; transform: scale(1.5); }
+    94% { opacity: 0.8; transform: scale(3.5); }
+    96%, 100% { opacity: 0; transform: scale(4.5); }
+  }
+  /* Crater effect */
+  @keyframes crater {
+    0%, 92% { opacity: 0; }
+    93%, 97% { opacity: 1; }
+    98%, 100% { opacity: 0; }
+  }
   
   .breathe { animation: breathe 4s ease-in-out infinite; }
   .float { animation: floatSlow 5s ease-in-out infinite; }
+  
+  .creeper-pos { animation: creeperMove 30s linear infinite; }
+  .steve-pos { animation: steveMove 30s linear infinite; }
+  
+  .bounce { animation: walkBounce 30s linear infinite; }
+  .sweat { animation: sweatDrop 30s linear infinite; }
+  
+  .creeper-fuse { animation: creeperFlash 30s linear infinite; }
+  .creeper-expand { animation: creeperSwell 30s linear infinite; transform-origin: 7px 24px; }
+  
+  /* IMPORTANT: Never omit explicit translate constraints when mixing SVG scales, otherwise transforms reset to 0,0 (top left screen corner) */
+  .explosion { animation: blast 30s ease-out infinite; transform-origin: 7px 10px; }
+  .crater-hole { animation: crater 30s step-end infinite; }
+  
+  .limb-L { animation: legA 30s linear infinite; }
+  .limb-R { animation: legB 30s linear infinite; }
+  .c-leg { transform-origin: 3px 0px; }
+  .s-leg { transform-origin: 2px 0px; }
 </style>
 
 <!-- Background -->
@@ -34,76 +187,212 @@
 </pattern>
 <rect width="888" height="130" fill="url(#bgGrid)"/>
 
+<!-- TERRAIN (Minecraft style: Grass Top, Dirt Bottom) -->
+<!-- Pattern dimensions match the 25px height of the ground rectangle exactly -->
+<pattern id="terrainGrid" width="60" height="25" patternUnits="userSpaceOnUse">
+  <!-- Solid Green Grass Top Layer -->
+  <rect x="0" y="0" width="60" height="5" fill="#5C9A32"/>
+  <rect x="0" y="5" width="60" height="2" fill="#4B7E29"/>
+  <!-- Grass dangles -->
+  <rect x="5" y="7" width="4" height="2" fill="#4B7E29"/>
+  <rect x="18" y="7" width="6" height="4" fill="#4B7E29"/>
+  <rect x="35" y="7" width="4" height="2" fill="#4B7E29"/>
+  <rect x="48" y="7" width="8" height="4" fill="#4B7E29"/>
+  
+  <!-- Solid Brown Dirt Layer -->
+  <rect x="0" y="7" width="60" height="18" fill="#5D4037"/>
+  <!-- Dirt details -->
+  <rect x="8" y="11" width="4" height="4" fill="#4E342E"/>
+  <rect x="25" y="15" width="6" height="4" fill="#4E342E"/>
+  <rect x="45" y="9" width="4" height="4" fill="#4E342E"/>
+  <rect x="12" y="19" width="6" height="4" fill="#3E2723"/>
+  <rect x="42" y="21" width="8" height="4" fill="#3E2723"/>
+</pattern>
+
+<!-- The ground surface starts at y=105, height 25. Coordinates exactly match the pattern. -->
+<rect x="0" y="105" width="888" height="25" fill="url(#terrainGrid)"/>
+<!-- Ground top border -->
+<line x1="0" y1="105" x2="888" y2="105" stroke="#4B7E29" stroke-width="2"/>
+
 <!-- Top/bottom accent lines -->
 <line x1="0" y1="1" x2="888" y2="1" stroke="#00E5FF" stroke-width="1" opacity="0.3"/>
 <line x1="0" y1="129" x2="888" y2="129" stroke="#B026FF" stroke-width="1" opacity="0.3"/>
 
-<!-- ===== LEFT: MINECRAFT BLOCK (pixel art) ===== -->
-<g transform="translate(85, 30)" class="float" style="animation-delay:0s">
-  <polygon points="0,-12 30,-27 60,-12 30,3" fill="#5B8731" stroke="#3E6420" stroke-width="1"/>
-  <polygon points="0,-12 0,22 30,37 30,3" fill="#8B6914" stroke="#6B4F10" stroke-width="1"/>
-  <polygon points="30,3 30,37 60,22 60,-12" fill="#A07818" stroke="#6B4F10" stroke-width="1"/>
-  <rect x="4" y="-4" width="6" height="6" fill="#7A5C12" opacity="0.5"/>
-  <rect x="14" y="6" width="6" height="6" fill="#7A5C12" opacity="0.4"/>
-  <rect x="6" y="16" width="6" height="6" fill="#7A5C12" opacity="0.3"/>
-  <rect x="12" y="-22" width="5" height="3" fill="#4A7228" opacity="0.6"/>
-  <rect x="30" y="-18" width="5" height="3" fill="#4A7228" opacity="0.5"/>
+
+<!-- FLOATING ICONS (Evenly Spaced) -->
+
+<!-- 1. LEFT: MINECRAFT BLOCK -->
+<g transform="translate(60, 25)">
+  <g class="float" style="animation-delay:0s">
+    <polygon points="0,-12 25,-24 50,-12 25,0" fill="#5B8731" stroke="#3E6420" stroke-width="1"/>
+    <polygon points="0,-12 0,18 25,30 25,0" fill="#8B6914" stroke="#6B4F10" stroke-width="1"/>
+    <polygon points="25,0 25,30 50,18 50,-12" fill="#A07818" stroke="#6B4F10" stroke-width="1"/>
+    <rect x="10" y="-18" width="4" height="2" fill="#4A7228" opacity="0.6"/>
+    <rect x="25" y="-15" width="6" height="3" fill="#4A7228" opacity="0.5"/>
+  </g>
 </g>
 
-<!-- Pickaxe -->
-<g transform="translate(130, 62)" opacity="0.5">
-  <line x1="0" y1="0" x2="18" y2="18" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M-2,-2 L6,-6 L10,-2 L6,2 Z" fill="#9CA3AF"/>
+<!-- 2. CENTER-LEFT: DUMBBELL -->
+<g transform="translate(200, 35)">
+  <g class="float" style="animation-delay:1.5s">
+    <rect x="0" y="9" width="60" height="4" rx="2" fill="#C0C0C0" opacity="0.9"/>
+    <rect x="-3" y="2" width="8" height="18" rx="1.5" fill="#FF9900" opacity="0.85"/>
+    <rect x="-8" y="5" width="5" height="12" rx="1" fill="#FF9900" opacity="0.6"/>
+    <rect x="55" y="2" width="8" height="18" rx="1.5" fill="#FF9900" opacity="0.85"/>
+    <rect x="63" y="5" width="5" height="12" rx="1" fill="#FF9900" opacity="0.6"/>
+  </g>
 </g>
 
-<!-- ===== CENTER-LEFT: DUMBBELL ===== -->
-<g transform="translate(290, 50)" class="float" style="animation-delay:1s">
-  <rect x="0" y="12" width="75" height="6" rx="3" fill="#C0C0C0" opacity="0.9"/>
-  <rect x="-4" y="2" width="12" height="26" rx="2" fill="#FF9900" opacity="0.85"/>
-  <rect x="-10" y="6" width="8" height="18" rx="2" fill="#FF9900" opacity="0.6"/>
-  <rect x="67" y="2" width="12" height="26" rx="2" fill="#FF9900" opacity="0.85"/>
-  <rect x="77" y="6" width="8" height="18" rx="2" fill="#FF9900" opacity="0.6"/>
-</g>
-
-<!-- ===== CENTER: NAME ===== -->
-<g>
+<!-- 3. CENTER: NAME -->
+<g transform="translate(0, -15)">
   <text x="444" y="55" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="28" font-weight="900" fill="#E0E6ED" letter-spacing="3" filter="url(#subtleGlow)">MARCOS</text>
-  <text x="444" y="80" text-anchor="middle" font-family="'Fira Code',monospace" font-size="11" fill="#5B7C99" letter-spacing="2">DEV · GAMER · LIFTER · EXPLORER</text>
-  <line x1="370" y1="90" x2="518" y2="90" stroke="#00E5FF" stroke-width="1" opacity="0.35"/>
+  <text x="444" y="78" text-anchor="middle" font-family="'Fira Code',monospace" font-size="11" fill="#5B7C99" letter-spacing="2">DEV · GAMER · LIFTER · EXPLORER</text>
 </g>
 
-<!-- ===== CENTER-RIGHT: TREE / NATURE ===== -->
-<g transform="translate(580, 38)" class="float" style="animation-delay:2s">
-  <rect x="12" y="38" width="6" height="18" rx="1" fill="#8B6848"/>
-  <polygon points="15,0 0,25 30,25" fill="#2D8B46" opacity="0.9"/>
-  <polygon points="15,10 3,32 27,32" fill="#3AA856" opacity="0.85"/>
-  <polygon points="15,20 5,38 25,38" fill="#228B3B" opacity="0.8"/>
+<!-- 4. CENTER-RIGHT: CODE ICON -->
+<g transform="translate(580, 22)">
+  <g class="float" style="animation-delay:0.4s">
+    <text x="25" y="30" text-anchor="middle" font-family="'Fira Code',monospace" font-size="34" font-weight="900" fill="#00E5FF" opacity="0.85" filter="url(#subtleGlow)">&lt;/&gt;</text>
+  </g>
 </g>
 
-<!-- ===== RIGHT: DOG (American Staffordshire) ===== -->
-<g transform="translate(700, 32)" class="float" style="animation-delay:0.5s">
-  <ellipse cx="22" cy="52" rx="18" ry="22" fill="#F0ECE4" opacity="0.9"/>
-  <circle cx="22" cy="26" r="14" fill="#F0ECE4" opacity="0.95"/>
-  <polygon points="12,16 8,4 16,14" fill="#F0ECE4" opacity="0.85"/>
-  <polygon points="32,16 36,4 28,14" fill="#F0ECE4" opacity="0.85"/>
-  <ellipse cx="22" cy="32" rx="7" ry="5" fill="#E8E0D4"/>
-  <ellipse cx="22" cy="30" rx="3" ry="2" fill="#333"/>
-  <circle cx="16" cy="24" r="2" fill="#1a1a1a"/>
-  <circle cx="28" cy="24" r="2" fill="#1a1a1a"/>
-  <circle cx="16.8" cy="23.5" r="0.6" fill="#fff"/>
-  <circle cx="28.8" cy="23.5" r="0.6" fill="#fff"/>
-  <ellipse cx="22" cy="44" rx="8" ry="10" fill="#FAFAFA" opacity="0.5"/>
-  <rect x="12" y="62" width="6" height="14" rx="2" fill="#F0ECE4"/>
-  <rect x="26" y="62" width="6" height="14" rx="2" fill="#F0ECE4"/>
-  <ellipse cx="15" cy="76" rx="4" ry="2.5" fill="#E8E0D4"/>
-  <ellipse cx="29" cy="76" rx="4" ry="2.5" fill="#E8E0D4"/>
-  <path d="M38 50 Q44 42, 42 36" fill="none" stroke="#F0ECE4" stroke-width="3" stroke-linecap="round"/>
+<!-- 5. RIGHT: TREE -->
+<g transform="translate(710, 15)">
+  <g class="float" style="animation-delay:1.9s">
+    <rect x="12" y="38" width="6" height="18" rx="1" fill="#8B6848"/>
+    <polygon points="15,0 0,25 30,25" fill="#2D8B46" opacity="0.9"/>
+    <polygon points="15,10 3,32 27,32" fill="#3AA856" opacity="0.85"/>
+    <polygon points="15,20 5,38 25,38" fill="#228B3B" opacity="0.8"/>
+  </g>
 </g>
 
-<!-- Corner marks -->
-<polygon points="6,6 20,6 20,9 9,9 9,20 6,20" fill="#00E5FF" opacity="0.5"/>
-<polygon points="882,124 868,124 868,121 879,121 879,110 882,110" fill="#B026FF" opacity="0.5"/>
+<!-- 6. FAR-RIGHT: DOG -->
+<g transform="translate(805, 20)">
+  <g class="float" style="animation-delay:0.8s">
+    <ellipse cx="22" cy="42" rx="15" ry="18" fill="#F0ECE4" opacity="0.9"/>
+    <circle cx="22" cy="20" r="12" fill="#F0ECE4" opacity="0.95"/>
+    <polygon points="13,11 10,2 16,10" fill="#F0ECE4" opacity="0.85"/>
+    <polygon points="31,11 34,2 28,10" fill="#F0ECE4" opacity="0.85"/>
+    <ellipse cx="22" cy="25" rx="6" ry="4" fill="#E8E0D4"/>
+    <ellipse cx="22" cy="23" rx="2.5" ry="1.5" fill="#333"/>
+    <circle cx="17" cy="18" r="1.5" fill="#1a1a1a"/>
+    <circle cx="27" cy="18" r="1.5" fill="#1a1a1a"/>
+    <circle cx="17.6" cy="17.6" r="0.5" fill="#fff"/>
+    <circle cx="27.6" cy="17.6" r="0.5" fill="#fff"/>
+    <rect x="13" y="50" width="5" height="12" rx="2" fill="#F0ECE4"/>
+    <rect x="26" y="50" width="5" height="12" rx="2" fill="#F0ECE4"/>
+    <path d="M36 40 Q40 34, 39 30" fill="none" stroke="#F0ECE4" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</g>
 
-<circle cx="210" cy="65" r="2" fill="#00E5FF" class="breathe" opacity="0.4"/>
-<circle cx="670" cy="65" r="2" fill="#B026FF" class="breathe" style="animation-delay:1s" opacity="0.4"/>
+
+<!-- ========================================== -->
+<!-- ANIMATED MINECRAFT CHASE SCENE             -->
+<!-- ========================================== -->
+<!-- Setup: Ground is at y=105. -->
+
+<g>
+
+  <!-- CREEPER -->
+  <!-- Creeper stops moving at x=380. Explosion rendered at center of creeper. -->
+  <g class="creeper-pos">
+    <!-- Explodes at 75% of animation loop -->
+    <g class="creeper-expand">
+      <g class="creeper-fuse">
+        <g class="bounce">
+          <!-- Body -->
+          <rect x="2" y="8" width="10" height="12" fill="#55B059"/>
+          
+          <!-- Head -->
+          <rect x="-1" y="-6" width="16" height="16" fill="#69DA6F"/>
+          <rect x="2" y="-2" width="3" height="3" fill="#111"/>
+          <rect x="9" y="-2" width="3" height="3" fill="#111"/>
+          <rect x="5" y="1" width="4" height="6" fill="#111"/>
+          <rect x="4" y="3" width="1" height="4" fill="#111"/>
+          <rect x="9" y="3" width="1" height="4" fill="#111"/>
+  
+          <!-- Legs. -->
+          <!-- Back legs -->
+          <g transform="translate(4, 20)"><rect class="limb-L c-leg" x="0" y="0" width="6" height="4" fill="#3E8342"/></g>
+          <g transform="translate(8, 20)"><rect class="limb-R c-leg" x="0" y="0" width="6" height="4" fill="#3E8342"/></g>
+          <!-- Front legs (Offset back visually but same translation anchor) -->
+          <g transform="translate(2, 20)"><rect class="limb-R c-leg" x="0" y="0" width="6" height="4" fill="#4CAC51"/></g>
+          <g transform="translate(6, 20)"><rect class="limb-L c-leg" x="0" y="0" width="6" height="4" fill="#4CAC51"/></g>
+        </g>
+      </g>
+    </g>
+    
+    <!-- EXPLOSION EFFECTS -->
+    <path d="M -15 24 Q 7 32, 29 24" fill="#1c110e" class="crater-hole"/>
+    <circle cx="7" cy="10" r="10" fill="none" class="explosion" stroke="#fff" stroke-width="2"/>
+    <circle cx="7" cy="10" r="5" fill="#FFCF4A" opacity="0.9" class="explosion" style="animation-delay: 0.05s;"/>
+    <circle cx="7" cy="10" r="15" fill="#FF5252" class="explosion" style="animation-delay: 0.1s;"/>
+  </g>
+
+
+  <!-- STEVE -->
+  <!-- Steve's feet target y=105. Transform pushes him down to feet level. -->
+  <g class="steve-pos">
+    <g class="bounce">
+      
+      <!-- Back arm -->
+      <!-- Shoulder translation wrapper to fix anchor -->
+      <g transform="translate(5, 10)">
+        <rect class="limb-L s-leg" x="0" y="0" width="4" height="12" fill="#5F4294"/>
+      </g>
+
+      <!-- Back leg -->
+      <!-- Hip translation wrapper to fix anchor -->
+      <g transform="translate(5, 20)">
+        <g class="limb-L s-leg">
+          <rect x="0" y="0" width="4" height="8" fill="#382D67"/>
+          <rect x="0" y="8" width="4" height="2" fill="#757575"/>
+        </g>
+      </g>
+
+      <!-- Chest -->
+      <rect x="3" y="10" width="8" height="10" fill="#00AAAA"/>
+      
+      <!-- Head -->
+      <g transform="translate(7, 5)">
+        <rect x="-5" y="-5" width="10" height="10" fill="#D3A17E"/>
+        <rect x="-5" y="-5" width="10" height="2" fill="#3C2A1E"/>
+        <rect x="-5" y="-3" width="2" height="2" fill="#3C2A1E"/>
+        <rect x="3" y="-3" width="2" height="2" fill="#3C2A1E"/>
+        <rect x="-2" y="-1" width="2" height="1.5" fill="#fff"/>
+        <rect x="-1" y="-1" width="1" height="1.5" fill="#3A2C85"/>
+        <rect x="-1" y="1" width="2" height="1" fill="#90654D"/>
+        <rect x="-1" y="3" width="2" height="1" fill="#70442D"/>
+      </g>
+
+      <!-- Front leg -->
+      <g transform="translate(5, 20)">
+        <g class="limb-R s-leg">
+          <rect x="0" y="0" width="4" height="8" fill="#453B85"/>
+          <rect x="0" y="8" width="4" height="2" fill="#757575"/> 
+        </g>
+      </g>
+
+      <!-- Front arm -->
+      <g transform="translate(5, 10)">
+        <g class="limb-R s-leg">
+          <rect x="0" y="0" width="4" height="4" fill="#00AAAA"/>
+          <rect x="0" y="4" width="4" height="8" fill="#D3A17E"/>
+        </g>
+      </g>
+
+      <!-- Sweat drop -->
+      <g transform="translate(18, 5)" class="sweat">
+        <path d="M0,0 Q-1.5,2.5 0,4 Q1.5,2.5 0,0 Z" fill="#00E5FF" opacity="0.8"/>
+      </g>
+
+    </g>
+  </g>
+
+</g>
+
+<!-- Decorative dots at the top -->
+<circle cx="210" cy="20" r="2" fill="#00E5FF" class="breathe" opacity="0.4"/>
+<circle cx="670" cy="18" r="2" fill="#B026FF" class="breathe" style="animation-delay:1s" opacity="0.4"/>
+
 </svg>

@@ -341,116 +341,7 @@ def create_svg(stats):
     return svg
 
 
-def create_banner_svg():
-    return """<svg width="888" height="130" viewBox="0 0 888 130" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <linearGradient id="bannerBg" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stop-color="#0B0E17"/>
-    <stop offset="40%" stop-color="#0D1420"/>
-    <stop offset="100%" stop-color="#0B0E17"/>
-  </linearGradient>
-  <filter id="softGlow">
-    <feGaussianBlur stdDeviation="2.5" result="b"/>
-    <feComposite in="SourceGraphic" in2="b" operator="over"/>
-  </filter>
-  <filter id="subtleGlow">
-    <feGaussianBlur stdDeviation="1.5" result="b"/>
-    <feComposite in="SourceGraphic" in2="b" operator="over"/>
-  </filter>
-</defs>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Fira+Code:wght@400;600&amp;display=swap');
-  
-  @keyframes breathe { 0%,100%{opacity:.6} 50%{opacity:1} }
-  @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-  
-  .breathe { animation: breathe 4s ease-in-out infinite; }
-  .float { animation: floatSlow 5s ease-in-out infinite; }
-</style>
-
-<!-- Background -->
-<rect width="888" height="130" rx="10" fill="url(#bannerBg)"/>
-
-<!-- Subtle grid -->
-<pattern id="bgGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-  <path d="M40 0L0 0 0 40" fill="none" stroke="rgba(0,229,255,0.03)" stroke-width="1"/>
-</pattern>
-<rect width="888" height="130" fill="url(#bgGrid)"/>
-
-<!-- Top/bottom accent lines -->
-<line x1="0" y1="1" x2="888" y2="1" stroke="#00E5FF" stroke-width="1" opacity="0.3"/>
-<line x1="0" y1="129" x2="888" y2="129" stroke="#B026FF" stroke-width="1" opacity="0.3"/>
-
-<!-- ===== LEFT: MINECRAFT BLOCK (pixel art) ===== -->
-<g transform="translate(85, 30)" class="float" style="animation-delay:0s">
-  <polygon points="0,-12 30,-27 60,-12 30,3" fill="#5B8731" stroke="#3E6420" stroke-width="1"/>
-  <polygon points="0,-12 0,22 30,37 30,3" fill="#8B6914" stroke="#6B4F10" stroke-width="1"/>
-  <polygon points="30,3 30,37 60,22 60,-12" fill="#A07818" stroke="#6B4F10" stroke-width="1"/>
-  <rect x="4" y="-4" width="6" height="6" fill="#7A5C12" opacity="0.5"/>
-  <rect x="14" y="6" width="6" height="6" fill="#7A5C12" opacity="0.4"/>
-  <rect x="6" y="16" width="6" height="6" fill="#7A5C12" opacity="0.3"/>
-  <rect x="12" y="-22" width="5" height="3" fill="#4A7228" opacity="0.6"/>
-  <rect x="30" y="-18" width="5" height="3" fill="#4A7228" opacity="0.5"/>
-</g>
-
-<!-- Pickaxe -->
-<g transform="translate(130, 62)" opacity="0.5">
-  <line x1="0" y1="0" x2="18" y2="18" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M-2,-2 L6,-6 L10,-2 L6,2 Z" fill="#9CA3AF"/>
-</g>
-
-<!-- ===== CENTER-LEFT: DUMBBELL ===== -->
-<g transform="translate(290, 50)" class="float" style="animation-delay:1s">
-  <rect x="0" y="12" width="75" height="6" rx="3" fill="#C0C0C0" opacity="0.9"/>
-  <rect x="-4" y="2" width="12" height="26" rx="2" fill="#FF9900" opacity="0.85"/>
-  <rect x="-10" y="6" width="8" height="18" rx="2" fill="#FF9900" opacity="0.6"/>
-  <rect x="67" y="2" width="12" height="26" rx="2" fill="#FF9900" opacity="0.85"/>
-  <rect x="77" y="6" width="8" height="18" rx="2" fill="#FF9900" opacity="0.6"/>
-</g>
-
-<!-- ===== CENTER: NAME ===== -->
-<g>
-  <text x="444" y="55" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="28" font-weight="900" fill="#E0E6ED" letter-spacing="3" filter="url(#subtleGlow)">MARCOS</text>
-  <text x="444" y="80" text-anchor="middle" font-family="'Fira Code',monospace" font-size="11" fill="#5B7C99" letter-spacing="2">DEV · GAMER · LIFTER · EXPLORER</text>
-  <line x1="370" y1="90" x2="518" y2="90" stroke="#00E5FF" stroke-width="1" opacity="0.35"/>
-</g>
-
-<!-- ===== CENTER-RIGHT: TREE / NATURE ===== -->
-<g transform="translate(580, 38)" class="float" style="animation-delay:2s">
-  <rect x="12" y="38" width="6" height="18" rx="1" fill="#8B6848"/>
-  <polygon points="15,0 0,25 30,25" fill="#2D8B46" opacity="0.9"/>
-  <polygon points="15,10 3,32 27,32" fill="#3AA856" opacity="0.85"/>
-  <polygon points="15,20 5,38 25,38" fill="#228B3B" opacity="0.8"/>
-</g>
-
-<!-- ===== RIGHT: DOG (American Staffordshire) ===== -->
-<g transform="translate(700, 32)" class="float" style="animation-delay:0.5s">
-  <ellipse cx="22" cy="52" rx="18" ry="22" fill="#F0ECE4" opacity="0.9"/>
-  <circle cx="22" cy="26" r="14" fill="#F0ECE4" opacity="0.95"/>
-  <polygon points="12,16 8,4 16,14" fill="#F0ECE4" opacity="0.85"/>
-  <polygon points="32,16 36,4 28,14" fill="#F0ECE4" opacity="0.85"/>
-  <ellipse cx="22" cy="32" rx="7" ry="5" fill="#E8E0D4"/>
-  <ellipse cx="22" cy="30" rx="3" ry="2" fill="#333"/>
-  <circle cx="16" cy="24" r="2" fill="#1a1a1a"/>
-  <circle cx="28" cy="24" r="2" fill="#1a1a1a"/>
-  <circle cx="16.8" cy="23.5" r="0.6" fill="#fff"/>
-  <circle cx="28.8" cy="23.5" r="0.6" fill="#fff"/>
-  <ellipse cx="22" cy="44" rx="8" ry="10" fill="#FAFAFA" opacity="0.5"/>
-  <rect x="12" y="62" width="6" height="14" rx="2" fill="#F0ECE4"/>
-  <rect x="26" y="62" width="6" height="14" rx="2" fill="#F0ECE4"/>
-  <ellipse cx="15" cy="76" rx="4" ry="2.5" fill="#E8E0D4"/>
-  <ellipse cx="29" cy="76" rx="4" ry="2.5" fill="#E8E0D4"/>
-  <path d="M38 50 Q44 42, 42 36" fill="none" stroke="#F0ECE4" stroke-width="3" stroke-linecap="round"/>
-</g>
-
-<!-- Corner marks -->
-<polygon points="6,6 20,6 20,9 9,9 9,20 6,20" fill="#00E5FF" opacity="0.5"/>
-<polygon points="882,124 868,124 868,121 879,121 879,110 882,110" fill="#B026FF" opacity="0.5"/>
-
-<circle cx="210" cy="65" r="2" fill="#00E5FF" class="breathe" opacity="0.4"/>
-<circle cx="670" cy="65" r="2" fill="#B026FF" class="breathe" style="animation-delay:1s" opacity="0.4"/>
-</svg>"""
 
 def create_about_me_svg():
     return """<svg width="888" height="200" viewBox="0 0 888 200" xmlns="http://www.w3.org/2000/svg">
@@ -526,16 +417,13 @@ def main():
     
     with open("dist/perfil_hud.svg", "w", encoding="utf-8") as f:
         f.write(create_svg(stats))
-    
-    with open("dist/banner_gd.svg", "w", encoding="utf-8") as f:
-        f.write(create_banner_svg())
         
     with open("dist/about_me.svg", "w", encoding="utf-8") as f:
         f.write(create_about_me_svg())
         
     print(f"✅ Generated dist/perfil_hud.svg ({len(stats['top_languages'])} languages detected)")
-    print("✅ Generated dist/banner_gd.svg")
     print("✅ Generated dist/about_me.svg")
+    print("⚠️  Para generar el banner, ejecuta: python scripts/generar_banner.py")
 
 if __name__ == "__main__":
     main()
