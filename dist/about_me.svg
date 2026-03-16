@@ -1,0 +1,63 @@
+<svg width="888" height="200" viewBox="0 0 888 200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="aboutBg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#0B0E17"/>
+    <stop offset="100%" stop-color="#0D1420"/>
+  </linearGradient>
+</defs>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap');
+  @keyframes fadeIn { 0%{opacity:0;transform:translateY(6px)} 100%{opacity:1;transform:translateY(0)} }
+  .fade { animation: fadeIn 0.8s ease-out forwards; }
+</style>
+
+<rect width="888" height="200" rx="10" fill="url(#aboutBg)" stroke="#1E293B" stroke-width="1"/>
+<rect x="0" y="0" width="3" height="200" rx="1" fill="#00E5FF" opacity="0.4"/>
+
+<text x="32" y="36" font-family="'Fira Code',monospace" font-size="13" fill="#00E5FF" letter-spacing="2" opacity="0.7" class="fade">// ABOUT_ME</text>
+<line x1="32" y1="46" x2="856" y2="46" stroke="#1E293B" stroke-width="1"/>
+
+<g class="fade" style="animation-delay:0.1s">
+  <text x="32" y="78" font-family="'Inter','Segoe UI',sans-serif" font-size="15" fill="#E0E6ED">
+    <tspan>Hi, I'm </tspan>
+    <tspan fill="#00E5FF" font-weight="600">Marcos</tspan>
+    <tspan> — a fullstack developer from Spain.</tspan>
+  </text>
+</g>
+
+<g class="fade" style="animation-delay:0.15s">
+  <text x="32" y="104" font-family="'Inter','Segoe UI',sans-serif" font-size="14" fill="#94A3B8">
+    I build things for the web and enjoy turning ideas into clean, functional code.
+  </text>
+</g>
+
+<g class="fade" style="animation-delay:0.2s">
+  <text x="32" y="130" font-family="'Inter','Segoe UI',sans-serif" font-size="14" fill="#94A3B8">
+    Outside of coding, you'll find me at the gym, outdoors in nature,
+  </text>
+</g>
+
+<g class="fade" style="animation-delay:0.25s">
+  <text x="32" y="152" font-family="'Inter','Segoe UI',sans-serif" font-size="14" fill="#94A3B8">
+    playing Minecraft or CoD, or hanging out with my dog.
+  </text>
+</g>
+
+<g class="fade" style="animation-delay:0.35s">
+  <rect x="32" y="170" width="55" height="22" rx="4" fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.5"/>
+  <text x="59" y="185" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#00E5FF" opacity="0.8">code</text>
+  
+  <rect x="97" y="170" width="68" height="22" rx="4" fill="none" stroke="#B026FF" stroke-width="1" opacity="0.5"/>
+  <text x="131" y="185" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#B026FF" opacity="0.8">gaming</text>
+  
+  <rect x="175" y="170" width="68" height="22" rx="4" fill="none" stroke="#FF9900" stroke-width="1" opacity="0.5"/>
+  <text x="209" y="185" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#FF9900" opacity="0.8">fitness</text>
+  
+  <rect x="253" y="170" width="65" height="22" rx="4" fill="none" stroke="#00FF41" stroke-width="1" opacity="0.5"/>
+  <text x="285" y="185" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#00FF41" opacity="0.8">nature</text>
+  
+  <rect x="328" y="170" width="55" height="22" rx="4" fill="none" stroke="#F0ECE4" stroke-width="1" opacity="0.4"/>
+  <text x="355" y="185" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#F0ECE4" opacity="0.7">dogs</text>
+</g>
+</svg>
