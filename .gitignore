@@ -14,7 +14,6 @@ scripts/generar_banner.py
 dist/banner_gd.svg
 
 # Distribution / packaging
-dist/
 build/
 *.egg-info/
 
