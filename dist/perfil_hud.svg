@@ -1,0 +1,208 @@
+<svg width="888" height="776" viewBox="0 0 888 776" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#02050A"/><stop offset="50%" stop-color="#051021"/><stop offset="100%" stop-color="#020611"/>
+  </linearGradient>
+  <linearGradient id="pg" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="rgba(11,25,44,0.92)"/><stop offset="100%" stop-color="rgba(4,10,20,0.92)"/>
+  </linearGradient>
+  <filter id="gG"><feGaussianBlur stdDeviation="3" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+  <filter id="gB"><feGaussianBlur stdDeviation="3" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M50 0L0 0 0 50" fill="none" stroke="rgba(0,229,255,0.04)" stroke-width="1"/>
+    <circle cx="50" cy="50" r="1" fill="rgba(0,229,255,0.12)"/>
+  </pattern>
+</defs>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&amp;family=Orbitron:wght@500;700;900&amp;display=swap');
+  .t1{font:800 26px 'Orbitron',sans-serif;fill:#E0E6ED;letter-spacing:2px}
+  .t2{font:700 14px 'Fira Code',monospace;fill:#00E5FF;letter-spacing:1px}
+  .t3{font:600 13px 'Fira Code',monospace;fill:#5B7C99;letter-spacing:1px}
+  .t4{font:700 22px 'Orbitron',sans-serif;fill:#00E5FF}
+  .t5{font:400 13px 'Fira Code',monospace;fill:#E0E6ED}
+  .t6{font:400 11px 'Fira Code',monospace;fill:rgba(0,255,65,0.45)}
+  .blink{animation:bk 1s step-end infinite;fill:#00FF41;font-weight:700}
+  @keyframes bk{50%{opacity:0}}
+  @keyframes fadeUp{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
+  .anim{animation:fadeUp .5s ease-out forwards}
+  
+        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:230px;opacity:1} }
+        .b0{animation:fb0 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.4s;width:0}
+        
+        @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:165px;opacity:1} }
+        .b1{animation:fb1 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.55s;width:0}
+        
+        @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:132px;opacity:1} }
+        .b2{animation:fb2 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.7s;width:0}
+        
+        @keyframes fb3 { 0%{width:0;opacity:0} 100%{width:79px;opacity:1} }
+        .b3{animation:fb3 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.85s;width:0}
+        
+        @keyframes fb4 { 0%{width:0;opacity:0} 100%{width:52px;opacity:1} }
+        .b4{animation:fb4 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:1.0s;width:0}
+        
+</style>
+
+<!-- Background -->
+<rect width="888" height="776" rx="12" fill="url(#bg)" stroke="#00E5FF" stroke-width="1"/>
+<rect width="888" height="776" fill="url(#grid)"/>
+
+<!-- Top line -->
+<path d="M0 28 L28 0 L150 0 L170 20 L888 20" fill="none" stroke="rgba(0,229,255,0.3)" stroke-width="1"/>
+<text x="36" y="15" class="t6">sys.boot(user="marcosvil01")</text>
+
+<!-- Corner marks -->
+<polygon points="10,10 28,10 28,15 15,15 15,28 10,28" fill="#00E5FF"/>
+<polygon points="878,766 860,766 860,761 873,761 873,748 878,748" fill="#B026FF"/>
+
+<!-- Binary hints -->
+<text x="720" y="46" class="t6" style="opacity:.45">01001101 01100001</text>
+<text x="748" y="62" class="t6" style="opacity:.3">01110010 01100011</text>
+
+<!-- ============================================ -->
+<!-- SECTION 1: HEADER / IDENTITY                 -->
+<!-- ============================================ -->
+<g class="anim" style="animation-delay:.1s">
+  <rect x="24" y="24" width="840" height="100" rx="8" fill="url(#pg)" stroke="#00E5FF" stroke-width="1" stroke-opacity=".4"/>
+
+  <!-- Avatar circle -->
+  <circle cx="84" cy="74" r="38" fill="rgba(0,229,255,0.04)" stroke="#00E5FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="84" cy="74" r="32" fill="rgba(0,255,65,0.08)"/>
+  <text x="70" y="84" class="t1" font-size="30" fill="#00FF41" filter="url(#gG)">M<tspan font-size="20">.</tspan></text>
+
+  <!-- Name & Role -->
+  <text x="144" y="59" class="t2" font-size="16">MARCOS</text>
+  <text x="144" y="82" class="t3"><tspan fill="#E0E6ED">Role: </tspan><tspan fill="#B026FF">FULLSTACK_DEV</tspan></text>
+  <text x="144" y="104" class="t3"><tspan fill="#E0E6ED">Status: </tspan><tspan fill="#FF9900">CODING</tspan><tspan class="blink">_</tspan></text>
+
+  <!-- Date -->
+  <text x="854" y="104" class="t6" text-anchor="end">v2026.03.14</text>
+</g>
+
+<!-- ============================================ -->
+<!-- SECTION 2: CORE STATS (4 boxes in a row)     -->
+<!-- ============================================ -->
+<g class="anim" style="animation-delay:.2s">
+  <rect x="24" y="140" width="840" height="160" rx="8" fill="url(#pg)" stroke="#5B7C99" stroke-width="1" stroke-opacity=".25"/>
+  <text x="40" y="168" class="t2">> CORE_METRICS</text>
+
+  <rect x="40" y="188" width="190" height="90" rx="6" fill="#060D18" stroke="#00FF41" stroke-width="1" stroke-opacity=".5"/>
+  <text x="135" y="216" class="t3" text-anchor="middle" fill="#5B7C99">COMMITS</text>
+  <text x="135" y="250" class="t4" text-anchor="middle" fill="#00FF41" filter="url(#gB)">1337</text>
+  <rect x="50" y="266" width="170" height="2" rx="1" fill="#00FF41" opacity=".3"/>
+
+  <rect x="246" y="188" width="190" height="90" rx="6" fill="#060D18" stroke="#00E5FF" stroke-width="1" stroke-opacity=".5"/>
+  <text x="341" y="216" class="t3" text-anchor="middle" fill="#5B7C99">STARS</text>
+  <text x="341" y="250" class="t4" text-anchor="middle" fill="#00E5FF" filter="url(#gB)">42</text>
+  <rect x="256" y="266" width="170" height="2" rx="1" fill="#00E5FF" opacity=".3"/>
+
+  <rect x="452" y="188" width="190" height="90" rx="6" fill="#060D18" stroke="#B026FF" stroke-width="1" stroke-opacity=".5"/>
+  <text x="547" y="216" class="t3" text-anchor="middle" fill="#5B7C99">PULL REQUESTS</text>
+  <text x="547" y="250" class="t4" text-anchor="middle" fill="#B026FF" filter="url(#gB)">15</text>
+  <rect x="462" y="266" width="170" height="2" rx="1" fill="#B026FF" opacity=".3"/>
+
+  <rect x="658" y="188" width="190" height="90" rx="6" fill="#060D18" stroke="#FF9900" stroke-width="1" stroke-opacity=".5"/>
+  <text x="753" y="216" class="t3" text-anchor="middle" fill="#5B7C99">ISSUES</text>
+  <text x="753" y="250" class="t4" text-anchor="middle" fill="#FF9900" filter="url(#gB)">8</text>
+  <rect x="668" y="266" width="170" height="2" rx="1" fill="#FF9900" opacity=".3"/>
+
+  <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+520 this year</text>
+</g>
+
+<!-- ============================================ -->
+<!-- SECTION 3: LANGUAGES (responsive rows)       -->
+<!-- ============================================ -->
+<g class="anim" style="animation-delay:.35s">
+  <rect x="24" y="316" width="840" height="250" rx="8" fill="url(#pg)" stroke="#5B7C99" stroke-width="1" stroke-opacity=".25"/>
+  <text x="40" y="344" class="t2" fill="#B026FF">// RUNTIME_METRICS::LANGUAGES</text>
+  <text x="848" y="344" class="t6" fill="#5B7C99" text-anchor="end">5 detected</text>
+  <rect x="40" y="354" width="808" height="1" fill="rgba(176,38,255,0.25)"/>
+
+  <g class="anim" style="animation-delay:0.4s">
+    <text x="40" y="382" class="t5">Java</text>
+    <text x="848" y="382" class="t5" fill="#b07219" text-anchor="end">35%</text>
+    <rect x="180" y="372" width="620" height="7" rx="3" fill="#0A1220"/>
+    <rect x="180" y="372" height="7" rx="3" fill="#b07219" class="b0"/>
+    <rect x="180" y="372" height="7" rx="3" fill="#b07219" opacity=".4" filter="url(#gB)" class="b0"/>
+  </g>
+
+  <g class="anim" style="animation-delay:0.48000000000000004s">
+    <text x="40" y="420" class="t5">Python</text>
+    <text x="848" y="420" class="t5" fill="#3572A5" text-anchor="end">25%</text>
+    <rect x="180" y="410" width="620" height="7" rx="3" fill="#0A1220"/>
+    <rect x="180" y="410" height="7" rx="3" fill="#3572A5" class="b1"/>
+    <rect x="180" y="410" height="7" rx="3" fill="#3572A5" opacity=".4" filter="url(#gB)" class="b1"/>
+  </g>
+
+  <g class="anim" style="animation-delay:0.56s">
+    <text x="40" y="458" class="t5">TypeScript</text>
+    <text x="848" y="458" class="t5" fill="#3178c6" text-anchor="end">20%</text>
+    <rect x="180" y="448" width="620" height="7" rx="3" fill="#0A1220"/>
+    <rect x="180" y="448" height="7" rx="3" fill="#3178c6" class="b2"/>
+    <rect x="180" y="448" height="7" rx="3" fill="#3178c6" opacity=".4" filter="url(#gB)" class="b2"/>
+  </g>
+
+  <g class="anim" style="animation-delay:0.64s">
+    <text x="40" y="496" class="t5">JavaScript</text>
+    <text x="848" y="496" class="t5" fill="#f1e05a" text-anchor="end">12%</text>
+    <rect x="180" y="486" width="620" height="7" rx="3" fill="#0A1220"/>
+    <rect x="180" y="486" height="7" rx="3" fill="#f1e05a" class="b3"/>
+    <rect x="180" y="486" height="7" rx="3" fill="#f1e05a" opacity=".4" filter="url(#gB)" class="b3"/>
+  </g>
+
+  <g class="anim" style="animation-delay:0.72s">
+    <text x="40" y="534" class="t5">HTML</text>
+    <text x="848" y="534" class="t5" fill="#e34c26" text-anchor="end">8%</text>
+    <rect x="180" y="524" width="620" height="7" rx="3" fill="#0A1220"/>
+    <rect x="180" y="524" height="7" rx="3" fill="#e34c26" class="b4"/>
+    <rect x="180" y="524" height="7" rx="3" fill="#e34c26" opacity=".4" filter="url(#gB)" class="b4"/>
+  </g>
+
+</g>
+
+<!-- ============================================ -->
+<!-- SECTION 4: SYSTEM MODULES / HOBBIES          -->
+<!-- ============================================ -->
+<g class="anim" style="animation-delay:.6s">
+  <rect x="24" y="582" width="840" height="170" rx="8" fill="url(#pg)" stroke="#FF9900" stroke-width="1" stroke-opacity=".35"/>
+  <text x="40" y="610" class="t2" fill="#FF9900">[+] SYSTEM_MODULES</text>
+  <text x="848" y="610" class="t6" fill="#5B7C99" text-anchor="end">4 mounted</text>
+
+  <path d="M48 624 L222 624 L230 632 L230 726 L222 734 L48 734 L40 726 L40 632 Z" fill="#060D18" stroke="#00FF41" stroke-width="1.5"/>
+  <text x="135" y="644" class="t6" text-anchor="middle" fill="#00FF41">MOD.DEV</text>
+  <text x="135" y="724" class="t5" text-anchor="middle">CODING</text>
+
+  <path d="M254 624 L428 624 L436 632 L436 726 L428 734 L254 734 L246 726 L246 632 Z" fill="#060D18" stroke="#00E5FF" stroke-width="1.5"/>
+  <text x="341" y="644" class="t6" text-anchor="middle" fill="#00E5FF">MOD.GAME</text>
+  <text x="341" y="724" class="t5" text-anchor="middle">GAMING</text>
+
+  <path d="M460 624 L634 624 L642 632 L642 726 L634 734 L460 734 L452 726 L452 632 Z" fill="#060D18" stroke="#FF9900" stroke-width="1.5"/>
+  <text x="547" y="644" class="t6" text-anchor="middle" fill="#FF9900">MOD.STRG</text>
+  <text x="547" y="724" class="t5" text-anchor="middle">FITNESS</text>
+
+  <path d="M666 624 L840 624 L848 632 L848 726 L840 734 L666 734 L658 726 L658 632 Z" fill="#060D18" stroke="#B026FF" stroke-width="1.5"/>
+  <text x="753" y="644" class="t6" text-anchor="middle" fill="#B026FF">MOD.WILD</text>
+  <text x="753" y="724" class="t5" text-anchor="middle">NATURE</text>
+
+  <rect x="110" y="664" width="50" height="28" rx="3" fill="none" stroke="#00FF41" stroke-width="2"/>
+  <path d="M100 696 L170 696 L173 700 L97 700 Z" fill="#00FF41"/>
+  <text x="117" y="684" class="t3" font-size="10" fill="#00FF41">>_</text>
+
+  <path d="M319 680 Q319 662,341 662 Q363 662,363 680 L363 688 Q363 700,353 700 L349 686 L333 686 L329 700 Q319 700,319 688 Z" fill="none" stroke="#00E5FF" stroke-width="2"/>
+  <circle cx="331" cy="680" r="3.5" fill="#00E5FF"/>
+  <circle cx="349" cy="672" r="2" fill="#00E5FF"/>
+  <circle cx="355" cy="678" r="2" fill="#00E5FF"/>
+
+  <rect x="521" y="679" width="52" height="6" rx="2" fill="#FF9900"/>
+  <rect x="525" y="670" width="9" height="24" rx="1" fill="none" stroke="#FF9900" stroke-width="2"/>
+  <rect x="560" y="670" width="9" height="24" rx="1" fill="none" stroke="#FF9900" stroke-width="2"/>
+
+  <path d="M753 659 L739 682 L748 682 L737 700 L769 700 L758 682 L767 682 Z" fill="none" stroke="#B026FF" stroke-width="2"/>
+  <circle cx="773" cy="669" r="3" fill="#B026FF"/>
+  <circle cx="767" cy="664" r="2" fill="#B026FF"/>
+  <circle cx="779" cy="664" r="2" fill="#B026FF"/>
+
+</g>
+
+</svg>
