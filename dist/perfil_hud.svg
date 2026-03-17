@@ -107,7 +107,11 @@
   <text x="753" y="250" class="t4" text-anchor="middle" fill="#FF9900" filter="url(#gB)">24</text>
   <rect x="668" y="266" width="170" height="2" rx="1" fill="#FF9900" opacity=".3"/>
 
+<<<<<<< HEAD
   <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+520 this year</text>
+=======
+  <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+322 this year</text>
+>>>>>>> 5322c8ff9f248fa41552d4b75bd36f7cef969e8c
 </g>
 
 <!-- ============================================ -->
