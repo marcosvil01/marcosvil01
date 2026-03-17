@@ -36,6 +36,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add dist/perfil_hud.svg dist/about_me.svg
+          git add dist/perfil_hud.svg dist/about_me.svg README.md
           git diff --staged --quiet || git commit -m "🚀 Auto-update epic profile stats"
           git push

@@ -408,6 +408,36 @@ def create_about_me_svg():
 </g>
 </svg>"""
 
+def update_readme_timestamp():
+    """Updates the README.md to include a cache-busting timestamp on SVG links."""
+    if not os.path.exists("README.md"):
+        return
+        
+    with open("README.md", "r", encoding="utf-8") as f:
+        content = f.read()
+        
+    # Generate timestamp for cache busting
+    ts = datetime.now().strftime("%Y%m%d%H%M")
+    
+    import re
+    # Match strings like 'dist/perfil_hud.svg' or 'dist/perfil_hud.svg?v=123'
+    # and replace with 'dist/perfil_hud.svg?v=ts'
+    new_content = re.sub(
+        r'(src="dist/perfil_hud\.svg)(?:\?v=[^"]*)?(")', 
+        rf'\1?v={ts}\2', 
+        content
+    )
+    new_content = re.sub(
+        r'(src="dist/about_me\.svg)(?:\?v=[^"]*)?(")', 
+        rf'\1?v={ts}\2', 
+        new_content
+    )
+    
+    if new_content != content:
+        with open("README.md", "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print(f"🔄 Updated README.md with cache-buster v={ts}")
+
 def main():
     print("Fetching stats...")
     stats = get_github_stats()
@@ -421,8 +451,12 @@ def main():
     with open("dist/about_me.svg", "w", encoding="utf-8") as f:
         f.write(create_about_me_svg())
         
-    print(f"✅ Generated dist/perfil_hud.svg ({len(stats['top_languages'])} languages detected)")
+    print("✅ Generated dist/perfil_hud.svg")
     print("✅ Generated dist/about_me.svg")
+    
+    # Update README and verify
+    update_readme_timestamp()
+    
     print("⚠️  Para generar el banner, ejecuta: python scripts/generar_banner.py")
 
 if __name__ == "__main__":
