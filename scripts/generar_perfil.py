@@ -432,6 +432,11 @@ def update_readme_timestamp():
         rf'\1?v={ts}\2', 
         new_content
     )
+    new_content = re.sub(
+        r'(src="dist/banner_gd\.svg)(?:\?v=[^"]*)?(")', 
+        rf'\1?v={ts}\2', 
+        new_content
+    )
     
     if new_content != content:
         with open("README.md", "w", encoding="utf-8") as f:

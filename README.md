@@ -1,23 +1,20 @@
 <!-- BANNER -->
-
-<div align="center">
-  <img src="dist/banner_gd.svg" alt="Banner" />
-</div>
-
-<br>
+<p align="center">
+  <img src="dist/banner_gd.svg?v=202603170313" alt="Banner" width="888" />
+</p>
 
 <!-- ABOUT ME -->
+<p align="center">
+  <img src="dist/about_me.svg?v=202603170313" alt="About Me" width="888" />
+</p>
 
-<div align="center">
-  <img src="dist/about_me.svg?v=202603170310" alt="About Me" />
-</div>
+<!-- STATS DASHBOARD -->
+<p align="center">
+  <img src="dist/perfil_hud.svg?v=202603170313" alt="Stats Dashboard" width="888" />
+</p>
 
 <br>
 
-<!-- STATS DASHBOARD -->
-
-<div align="center">
-  <img src="dist/perfil_hud.svg?v=202603170310" alt="Stats Dashboard" />
-</div>
-
- `<br>`
+<p align="center">
+  <sub>⚡ This profile auto-updates via GitHub Actions</sub>
+</p>
