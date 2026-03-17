@@ -16,7 +16,7 @@ def get_github_stats():
             "commits": 1337,
             "stars": 42,
             "prs": 15,
-            "issues": 8,
+            "repos": 24,
             "followers": 12,
             "contribs_last_year": 520,
             "top_languages": [
@@ -83,7 +83,7 @@ def get_github_stats():
         "commits": data["contributionsCollection"]["totalCommitContributions"],
         "stars": stars,
         "prs": data["contributionsCollection"]["totalPullRequestContributions"],
-        "issues": data["contributionsCollection"]["totalIssueContributions"],
+        "repos": data["repositories"]["totalCount"],
         "followers": data["followers"]["totalCount"],
         "contribs_last_year": data["contributionsCollection"]["contributionCalendar"]["totalContributions"],
         "top_languages": top_langs
@@ -202,7 +202,7 @@ def create_svg(stats):
   <text x="{PAD+120}" y="{y_header+80}" class="t3"><tspan fill="{WHITE}">Status: </tspan><tspan fill="{ORANGE}">CODING</tspan><tspan class="blink">_</tspan></text>
 
   <!-- Date -->
-  <text x="{W-PAD-10}" y="{y_header+80}" class="t6" text-anchor="end">v{datetime.now().strftime('%Y.%m.%d')}</text>
+  <text x="{W-PAD-10}" y="{y_header+80}" class="t6" text-anchor="end">v{datetime.now().strftime('%Y.%m.%d.%H%M')}</text>
 </g>
 
 <!-- ============================================ -->
@@ -218,7 +218,7 @@ def create_svg(stats):
         ("COMMITS",        stats["commits"],           GREEN),
         ("STARS",          stats["stars"],              CYAN),
         ("PULL REQUESTS",  stats["prs"],                PURPLE),
-        ("ISSUES",         stats["issues"],             ORANGE),
+        ("REPOSITORIES",   stats["repos"],              ORANGE),
     ]
     box_w = (INNER - 16 * 5) // 4  # 4 boxes with gaps
     box_h = 90

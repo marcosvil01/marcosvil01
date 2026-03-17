@@ -13,6 +13,9 @@
     <feGaussianBlur stdDeviation="1.5" result="b"/>
     <feComposite in="SourceGraphic" in2="b" operator="over"/>
   </filter>
+  <clipPath id="bannerClip">
+    <rect width="888" height="130" rx="10"/>
+  </clipPath>
 </defs>
 
 <style>
@@ -33,7 +36,7 @@
     23% { transform:translate(1100px, 89px) scaleX(1); }
     23.01% { transform:translate(-100px, 89px) scaleX(1); }
     
-    /* Scenario 2: Run straight across (repeat) */
+    /* Scenario 2: Run straight across */
     25% { transform:translate(-100px, 89px) scaleX(1); }
     48% { transform:translate(1100px, 89px) scaleX(1); }
     48.01% { transform:translate(-100px, 89px) scaleX(1); }
@@ -46,10 +49,8 @@
     /* Scenario 4: Run, Steve turns and kills */
     75% { transform:translate(-100px, 89px) scaleX(1); }
     84%, 96% { transform:translate(380px, 89px) scaleX(1); }
-    /* Smooth return offscreen */
     97% { transform:translate(200px, 89px) scaleX(1); }
-    98% { transform:translate(-50px, 89px) scaleX(1); }
-    99%, 100% { transform:translate(-100px, 89px) scaleX(1); }
+    97.01%, 100% { transform:translate(-100px, 89px) scaleX(1); }
   }
   
   @keyframes steveMove { 
@@ -67,20 +68,13 @@
     50% { transform:translate(-40px, 85px) scaleX(1); }
     58.5%, 70% { transform:translate(440px, 85px) rotate(0deg) scaleX(1); }
     72% { transform:translate(600px, -50px) rotate(90deg) scaleX(1); }
-    74% { transform:translate(1000px, -200px) rotate(180deg) scaleX(1); }
     74.01% { transform:translate(-40px, 85px) scaleX(1); }
     
     /* Scenario 4: Steve runs, STOPS, turns around, pulls sword */
     75% { transform:translate(-40px, 85px) scaleX(1); }
     83.5%, 86% { transform:translate(490px, 85px) scaleX(1); }
-    /* Turn around (flip horizontally) */
-    87% { transform:translate(490px, 85px) scaleX(-1); }
-    /* Hold position with sword out */
-    88%, 96% { transform:translate(490px, 85px) scaleX(-1); }
-    /* Smooth return to start */
-    97% { transform:translate(300px, 85px) scaleX(1); }
-    98% { transform:translate(100px, 85px) scaleX(1); }
-    99%, 100% { transform:translate(-40px, 85px) scaleX(1); }
+    87%, 96% { transform:translate(490px, 85px) scaleX(-1); }
+    96.01%, 100% { transform:translate(-40px, 85px) scaleX(1); }
   }
   
   /* Bouncing only while running forward */
@@ -199,15 +193,11 @@
   /* === SCENARIO 4: STEVE KILLS CREEPER === */
   /* Sword appears when Steve turns - adjusted for contact */
   @keyframes swordAppear {
-    0%, 86% { opacity:0; transform:rotate(0deg) translateX(0); }
-    /* Sword appears in ready position */
-    87%, 88% { opacity:1; transform:rotate(-30deg) translateX(0); }
-    /* Slash motion - sword swings and moves toward creeper */
-    89% { opacity:1; transform:rotate(-10deg) translateX(-35px); }
-    90% { opacity:1; transform:rotate(20deg) translateX(-50px); }
-    /* Hold after strike */
-    91%, 96% { opacity:1; transform:rotate(15deg) translateX(-45px); }
-    97%, 100% { opacity:0; transform:rotate(0deg) translateX(0); }
+    0%, 86% { opacity:0; transform:rotate(-45deg) translate(2px, 5px); }
+    87% { opacity:1; transform:rotate(-45deg) translate(0, 0); }
+    89% { opacity:1; transform:rotate(30deg) translate(-20px, -10px); }
+    91%, 95% { opacity:1; transform:rotate(15deg) translate(-15px, -5px); }
+    96%, 100% { opacity:0; }
   }
   
   /* Creeper damage reaction - shakes when hit */
@@ -361,7 +351,7 @@
 </g>
 
 <!-- ANIMATED MINECRAFT CHASE -->
-<g>
+<g clip-path="url(#bannerClip)">
 
   <!-- CREEPER -->
   <g class="creeper-pos">
@@ -434,33 +424,24 @@
         </g>
       </g>
       
-      <!-- DIAMOND SWORD (Scenario 4 only) - Minecraft style pixelated -->
+      <!-- HIGH QUALITY DIAMOND SWORD -->
       <g transform="translate(10, 12)" class="sword">
-        <!-- Blade (diamond color blocks) -->
-        <rect x="0" y="0" width="2" height="2" fill="#4DD4E8"/>
-        <rect x="1" y="2" width="2" height="2" fill="#5DE5F5"/>
-        <rect x="2" y="4" width="2" height="2" fill="#4DD4E8"/>
-        <rect x="3" y="6" width="2" height="2" fill="#5DE5F5"/>
-        <rect x="4" y="8" width="2" height="2" fill="#4DD4E8"/>
-        <rect x="5" y="10" width="2" height="2" fill="#5DE5F5"/>
-        <rect x="6" y="12" width="2" height="2" fill="#4DD4E8"/>
-        <!-- Highlight edge -->
-        <rect x="0" y="0" width="1" height="2" fill="#B3F0FF"/>
-        <rect x="1" y="2" width="1" height="2" fill="#B3F0FF"/>
-        <rect x="2" y="4" width="1" height="2" fill="#B3F0FF"/>
-        <!-- Shadow edge -->
-        <rect x="4" y="8" width="1" height="2" fill="#0097A7"/>
-        <rect x="5" y="10" width="1" height="2" fill="#0097A7"/>
-        <rect x="6" y="12" width="1" height="2" fill="#0097A7"/>
-        <!-- Handle (brown/dark) -->
-        <rect x="7" y="14" width="2" height="2" fill="#3E2723"/>
-        <rect x="7" y="16" width="2" height="2" fill="#5D4037"/>
-        <rect x="7" y="18" width="2" height="2" fill="#3E2723"/>
-        <!-- Guard (gray blocks) -->
-        <rect x="5" y="14" width="2" height="2" fill="#616161"/>
-        <rect x="9" y="14" width="2" height="2" fill="#616161"/>
-        <rect x="6" y="14" width="1" height="1" fill="#9E9E9E"/>
-        <rect x="9" y="14" width="1" height="1" fill="#424242"/>
+        <!-- Border/Outline -->
+        <path d="M0,0 h6 v2 h-2 v2 h-2 v2 h-2 v-2" fill="#1B2D31"/>
+        <!-- Diamond Blade -->
+        <rect x="1" y="1" width="4" height="1" fill="#4DD4E8"/>
+        <rect x="1" y="2" width="3" height="1" fill="#4DD4E8"/>
+        <rect x="1" y="3" width="2" height="1" fill="#4DD4E8"/>
+        <rect x="1" y="4" width="1" height="1" fill="#4DD4E8"/>
+        <!-- Gloss Highlights -->
+        <rect x="1" y="1" width="1" height="2" fill="#B3F0FF" opacity="0.6"/>
+        <rect x="2" y="1" width="2" height="1" fill="#B3F0FF" opacity="0.6"/>
+        <!-- Crosstree / Guard -->
+        <rect x="4" y="4" width="4" height="2" fill="#42291A" stroke="#1B1109" stroke-width="0.5"/>
+        <rect x="5" y="3" width="2" height="5" fill="#42291A" stroke="#1B1109" stroke-width="0.5"/>
+        <!-- Handle & Pommel -->
+        <rect x="5" y="7" width="2" height="3" fill="#5D4037"/>
+        <rect x="5" y="10" width="2" height="2" fill="#3E2723"/>
       </g>
       
       <g transform="translate(18, 5)" class="sweat">
