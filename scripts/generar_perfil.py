@@ -9,10 +9,15 @@ HEADERS = {"Authorization": f"Bearer {TOKEN}"} if TOKEN else {}
 
 def get_github_stats():
     """Fetches stats using GitHub GraphQL API"""
+    is_ci = os.environ.get("GITHUB_ACTIONS") == "true"
+    
     if not TOKEN:
-        print("⚠ No GH_TOKEN found. Using mock data for design preview.")
+        if is_ci:
+            raise ValueError("❌ ERROR: GH_TOKEN no encontrado en los Secrets de GitHub. Las estadísticas no se pueden cargar.")
+        
+        print("⚠ No GH_TOKEN found. Using mock data for local design preview.")
         return {
-            "name": "Marcos",
+            "name": "Marcos (MOCK)",
             "commits": 1337,
             "stars": 42,
             "prs": 15,
@@ -57,9 +62,14 @@ def get_github_stats():
 
     response = requests.post("https://api.github.com/graphql", json={"query": query}, headers=HEADERS)
     if response.status_code != 200:
-        raise Exception(f"Query failed: {response.status_code}")
+        raise Exception(f"Query failed: {response.status_code}. Response: {response.text}")
 
-    data = response.json()["data"]["user"]
+    result = response.json()
+    if "errors" in result:
+        raise Exception(f"GraphQL Errors: {result['errors']}")
+
+    data = result["data"]["user"]
+    print(f"✅ Data fetched successfully for {USERNAME}")
     stars = sum(r["stargazers"]["totalCount"] for r in data["repositories"]["nodes"])
 
     langs = {}
