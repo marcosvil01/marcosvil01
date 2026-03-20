@@ -27,10 +27,10 @@
   @keyframes fadeUp{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
   .anim{animation:fadeUp .5s ease-out forwards}
   
-        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:534px;opacity:1} }
+        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:528px;opacity:1} }
         .b0{animation:fb0 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.4s;width:0}
         
-        @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:39px;opacity:1} }
+        @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:33px;opacity:1} }
         .b1{animation:fb1 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.55s;width:0}
         
         @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:26px;opacity:1} }
@@ -80,7 +80,7 @@
   <text x="144" y="104" class="t3"><tspan fill="#E0E6ED">Status: </tspan><tspan fill="#FF9900">CODING</tspan><tspan class="blink">_</tspan></text>
 
   <!-- Date -->
-  <text x="854" y="104" class="t6" text-anchor="end">v2026.03.19.0157</text>
+  <text x="854" y="104" class="t6" text-anchor="end">v2026.03.20.0151</text>
 </g>
 
 <!-- ============================================ -->
@@ -107,10 +107,10 @@
 
   <rect x="658" y="188" width="190" height="90" rx="6" fill="#060D18" stroke="#FF9900" stroke-width="1" stroke-opacity=".5"/>
   <text x="753" y="216" class="t3" text-anchor="middle" fill="#5B7C99">REPOSITORIES</text>
-  <text x="753" y="250" class="t4" text-anchor="middle" fill="#FF9900" filter="url(#gB)">25</text>
+  <text x="753" y="250" class="t4" text-anchor="middle" fill="#FF9900" filter="url(#gB)">26</text>
   <rect x="668" y="266" width="170" height="2" rx="1" fill="#FF9900" opacity=".3"/>
 
-  <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+323 this year</text>
+  <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+324 this year</text>
 </g>
 
 <!-- ============================================ -->
@@ -124,7 +124,7 @@
 
   <g class="anim" style="animation-delay:0.4s">
     <text x="40" y="382" class="t5">TypeScript</text>
-    <text x="848" y="382" class="t5" fill="#3178c6" text-anchor="end">81%</text>
+    <text x="848" y="382" class="t5" fill="#3178c6" text-anchor="end">80%</text>
     <rect x="180" y="372" width="620" height="7" rx="3" fill="#0A1220"/>
     <rect x="180" y="372" height="7" rx="3" fill="#3178c6" class="b0"/>
     <rect x="180" y="372" height="7" rx="3" fill="#3178c6" opacity=".4" filter="url(#gB)" class="b0"/>
@@ -132,7 +132,7 @@
 
   <g class="anim" style="animation-delay:0.48000000000000004s">
     <text x="40" y="420" class="t5">PLpgSQL</text>
-    <text x="848" y="420" class="t5" fill="#336790" text-anchor="end">6%</text>
+    <text x="848" y="420" class="t5" fill="#336790" text-anchor="end">5%</text>
     <rect x="180" y="410" width="620" height="7" rx="3" fill="#0A1220"/>
     <rect x="180" y="410" height="7" rx="3" fill="#336790" class="b1"/>
     <rect x="180" y="410" height="7" rx="3" fill="#336790" opacity=".4" filter="url(#gB)" class="b1"/>
@@ -163,11 +163,11 @@
   </g>
 
   <g class="anim" style="animation-delay:0.8s">
-    <text x="40" y="572" class="t5">PHP</text>
-    <text x="848" y="572" class="t5" fill="#4F5D95" text-anchor="end">1%</text>
+    <text x="40" y="572" class="t5">Python</text>
+    <text x="848" y="572" class="t5" fill="#3572A5" text-anchor="end">1%</text>
     <rect x="180" y="562" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="562" height="7" rx="3" fill="#4F5D95" class="b5"/>
-    <rect x="180" y="562" height="7" rx="3" fill="#4F5D95" opacity=".4" filter="url(#gB)" class="b5"/>
+    <rect x="180" y="562" height="7" rx="3" fill="#3572A5" class="b5"/>
+    <rect x="180" y="562" height="7" rx="3" fill="#3572A5" opacity=".4" filter="url(#gB)" class="b5"/>
   </g>
 
 </g>
