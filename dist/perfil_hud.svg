@@ -27,13 +27,13 @@
   @keyframes fadeUp{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
   .anim{animation:fadeUp .5s ease-out forwards}
   
-        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:534px;opacity:1} }
+        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:528px;opacity:1} }
         .b0{animation:fb0 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.4s;width:0}
         
         @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:33px;opacity:1} }
         .b1{animation:fb1 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.55s;width:0}
         
-        @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:26px;opacity:1} }
+        @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:19px;opacity:1} }
         .b2{animation:fb2 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.7s;width:0}
         
         @keyframes fb3 { 0%{width:0;opacity:0} 100%{width:19px;opacity:1} }
@@ -42,7 +42,7 @@
         @keyframes fb4 { 0%{width:0;opacity:0} 100%{width:19px;opacity:1} }
         .b4{animation:fb4 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:1.0s;width:0}
         
-        @keyframes fb5 { 0%{width:0;opacity:0} 100%{width:6px;opacity:1} }
+        @keyframes fb5 { 0%{width:0;opacity:0} 100%{width:13px;opacity:1} }
         .b5{animation:fb5 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:1.15s;width:0}
         
 </style>
@@ -80,7 +80,7 @@
   <text x="144" y="104" class="t3"><tspan fill="#E0E6ED">Status: </tspan><tspan fill="#FF9900">CODING</tspan><tspan class="blink">_</tspan></text>
 
   <!-- Date -->
-  <text x="854" y="104" class="t6" text-anchor="end">v2026.03.30.0207</text>
+  <text x="854" y="104" class="t6" text-anchor="end">v2026.03.31.0120</text>
 </g>
 
 <!-- ============================================ -->
@@ -107,10 +107,10 @@
 
   <rect x="658" y="188" width="190" height="90" rx="6" fill="#060D18" stroke="#FF9900" stroke-width="1" stroke-opacity=".5"/>
   <text x="753" y="216" class="t3" text-anchor="middle" fill="#5B7C99">REPOSITORIES</text>
-  <text x="753" y="250" class="t4" text-anchor="middle" fill="#FF9900" filter="url(#gB)">28</text>
+  <text x="753" y="250" class="t4" text-anchor="middle" fill="#FF9900" filter="url(#gB)">30</text>
   <rect x="668" y="266" width="170" height="2" rx="1" fill="#FF9900" opacity=".3"/>
 
-  <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+326 this year</text>
+  <text x="848" y="168" class="t3" text-anchor="end" fill="#00FF41">+328 this year</text>
 </g>
 
 <!-- ============================================ -->
@@ -124,7 +124,7 @@
 
   <g class="anim" style="animation-delay:0.4s">
     <text x="40" y="382" class="t5">TypeScript</text>
-    <text x="848" y="382" class="t5" fill="#3178c6" text-anchor="end">81%</text>
+    <text x="848" y="382" class="t5" fill="#3178c6" text-anchor="end">80%</text>
     <rect x="180" y="372" width="620" height="7" rx="3" fill="#0A1220"/>
     <rect x="180" y="372" height="7" rx="3" fill="#3178c6" class="b0"/>
     <rect x="180" y="372" height="7" rx="3" fill="#3178c6" opacity=".4" filter="url(#gB)" class="b0"/>
@@ -139,35 +139,35 @@
   </g>
 
   <g class="anim" style="animation-delay:0.56s">
-    <text x="40" y="458" class="t5">Jupyter Notebook</text>
-    <text x="848" y="458" class="t5" fill="#DA5B0B" text-anchor="end">4%</text>
+    <text x="40" y="458" class="t5">Java</text>
+    <text x="848" y="458" class="t5" fill="#b07219" text-anchor="end">3%</text>
     <rect x="180" y="448" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="448" height="7" rx="3" fill="#DA5B0B" class="b2"/>
-    <rect x="180" y="448" height="7" rx="3" fill="#DA5B0B" opacity=".4" filter="url(#gB)" class="b2"/>
+    <rect x="180" y="448" height="7" rx="3" fill="#b07219" class="b2"/>
+    <rect x="180" y="448" height="7" rx="3" fill="#b07219" opacity=".4" filter="url(#gB)" class="b2"/>
   </g>
 
   <g class="anim" style="animation-delay:0.64s">
-    <text x="40" y="496" class="t5">Java</text>
-    <text x="848" y="496" class="t5" fill="#b07219" text-anchor="end">3%</text>
+    <text x="40" y="496" class="t5">Python</text>
+    <text x="848" y="496" class="t5" fill="#3572A5" text-anchor="end">3%</text>
     <rect x="180" y="486" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="486" height="7" rx="3" fill="#b07219" class="b3"/>
-    <rect x="180" y="486" height="7" rx="3" fill="#b07219" opacity=".4" filter="url(#gB)" class="b3"/>
+    <rect x="180" y="486" height="7" rx="3" fill="#3572A5" class="b3"/>
+    <rect x="180" y="486" height="7" rx="3" fill="#3572A5" opacity=".4" filter="url(#gB)" class="b3"/>
   </g>
 
   <g class="anim" style="animation-delay:0.72s">
-    <text x="40" y="534" class="t5">JavaScript</text>
-    <text x="848" y="534" class="t5" fill="#f1e05a" text-anchor="end">3%</text>
+    <text x="40" y="534" class="t5">Jupyter Notebook</text>
+    <text x="848" y="534" class="t5" fill="#DA5B0B" text-anchor="end">3%</text>
     <rect x="180" y="524" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="524" height="7" rx="3" fill="#f1e05a" class="b4"/>
-    <rect x="180" y="524" height="7" rx="3" fill="#f1e05a" opacity=".4" filter="url(#gB)" class="b4"/>
+    <rect x="180" y="524" height="7" rx="3" fill="#DA5B0B" class="b4"/>
+    <rect x="180" y="524" height="7" rx="3" fill="#DA5B0B" opacity=".4" filter="url(#gB)" class="b4"/>
   </g>
 
   <g class="anim" style="animation-delay:0.8s">
-    <text x="40" y="572" class="t5">CSS</text>
-    <text x="848" y="572" class="t5" fill="#663399" text-anchor="end">1%</text>
+    <text x="40" y="572" class="t5">JavaScript</text>
+    <text x="848" y="572" class="t5" fill="#f1e05a" text-anchor="end">2%</text>
     <rect x="180" y="562" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="562" height="7" rx="3" fill="#663399" class="b5"/>
-    <rect x="180" y="562" height="7" rx="3" fill="#663399" opacity=".4" filter="url(#gB)" class="b5"/>
+    <rect x="180" y="562" height="7" rx="3" fill="#f1e05a" class="b5"/>
+    <rect x="180" y="562" height="7" rx="3" fill="#f1e05a" opacity=".4" filter="url(#gB)" class="b5"/>
   </g>
 
 </g>
