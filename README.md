@@ -1,16 +1,16 @@
 <!-- BANNER -->
 <p align="center">
-  <img src="dist/banner_gd.svg?v=202604070027" alt="Banner" width="888" />
+  <img src="dist/banner_gd.svg?v=202604080028" alt="Banner" width="888" />
 </p>
 
 <!-- ABOUT ME -->
 <p align="center">
-  <img src="dist/about_me.svg?v=202604070027" alt="About Me" width="888" />
+  <img src="dist/about_me.svg?v=202604080028" alt="About Me" width="888" />
 </p>
 
 <!-- STATS DASHBOARD -->
 <p align="center">
-  <img src="dist/perfil_hud.svg?v=202604070027" alt="Stats Dashboard" width="888" />
+  <img src="dist/perfil_hud.svg?v=202604080028" alt="Stats Dashboard" width="888" />
 </p>
 
 <br>
