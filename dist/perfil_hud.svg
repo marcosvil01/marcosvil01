@@ -33,7 +33,7 @@
         @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:118px;opacity:1} }
         .b1{animation:fb1 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.55s;width:0}
         
-        @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:112px;opacity:1} }
+        @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:118px;opacity:1} }
         .b2{animation:fb2 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.7s;width:0}
         
         @keyframes fb3 { 0%{width:0;opacity:0} 100%{width:19px;opacity:1} }
@@ -80,7 +80,7 @@
   <text x="144" y="104" class="t3"><tspan fill="#E0E6ED">Status: </tspan><tspan fill="#FF9900">CODING</tspan><tspan class="blink">_</tspan></text>
 
   <!-- Date -->
-  <text x="854" y="104" class="t6" text-anchor="end">v2026.04.09.0023</text>
+  <text x="854" y="104" class="t6" text-anchor="end">v2026.04.10.0027</text>
 </g>
 
 <!-- ============================================ -->
@@ -131,19 +131,19 @@
   </g>
 
   <g class="anim" style="animation-delay:0.48000000000000004s">
-    <text x="40" y="420" class="t5">JavaScript</text>
-    <text x="848" y="420" class="t5" fill="#f1e05a" text-anchor="end">18%</text>
+    <text x="40" y="420" class="t5">Lua</text>
+    <text x="848" y="420" class="t5" fill="#000080" text-anchor="end">18%</text>
     <rect x="180" y="410" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="410" height="7" rx="3" fill="#f1e05a" class="b1"/>
-    <rect x="180" y="410" height="7" rx="3" fill="#f1e05a" opacity=".4" filter="url(#gB)" class="b1"/>
+    <rect x="180" y="410" height="7" rx="3" fill="#000080" class="b1"/>
+    <rect x="180" y="410" height="7" rx="3" fill="#000080" opacity=".4" filter="url(#gB)" class="b1"/>
   </g>
 
   <g class="anim" style="animation-delay:0.56s">
-    <text x="40" y="458" class="t5">Lua</text>
-    <text x="848" y="458" class="t5" fill="#000080" text-anchor="end">17%</text>
+    <text x="40" y="458" class="t5">JavaScript</text>
+    <text x="848" y="458" class="t5" fill="#f1e05a" text-anchor="end">18%</text>
     <rect x="180" y="448" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="448" height="7" rx="3" fill="#000080" class="b2"/>
-    <rect x="180" y="448" height="7" rx="3" fill="#000080" opacity=".4" filter="url(#gB)" class="b2"/>
+    <rect x="180" y="448" height="7" rx="3" fill="#f1e05a" class="b2"/>
+    <rect x="180" y="448" height="7" rx="3" fill="#f1e05a" opacity=".4" filter="url(#gB)" class="b2"/>
   </g>
 
   <g class="anim" style="animation-delay:0.64s">
@@ -163,11 +163,11 @@
   </g>
 
   <g class="anim" style="animation-delay:0.8s">
-    <text x="40" y="572" class="t5">Java</text>
-    <text x="848" y="572" class="t5" fill="#b07219" text-anchor="end">2%</text>
+    <text x="40" y="572" class="t5">Python</text>
+    <text x="848" y="572" class="t5" fill="#3572A5" text-anchor="end">2%</text>
     <rect x="180" y="562" width="620" height="7" rx="3" fill="#0A1220"/>
-    <rect x="180" y="562" height="7" rx="3" fill="#b07219" class="b5"/>
-    <rect x="180" y="562" height="7" rx="3" fill="#b07219" opacity=".4" filter="url(#gB)" class="b5"/>
+    <rect x="180" y="562" height="7" rx="3" fill="#3572A5" class="b5"/>
+    <rect x="180" y="562" height="7" rx="3" fill="#3572A5" opacity=".4" filter="url(#gB)" class="b5"/>
   </g>
 
 </g>
