@@ -27,10 +27,10 @@
   @keyframes fadeUp{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
   .anim{animation:fadeUp .5s ease-out forwards}
   
-        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:336px;opacity:1} }
+        @keyframes fb0 { 0%{width:0;opacity:0} 100%{width:330px;opacity:1} }
         .b0{animation:fb0 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.4s;width:0}
         
-        @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:118px;opacity:1} }
+        @keyframes fb1 { 0%{width:0;opacity:0} 100%{width:132px;opacity:1} }
         .b1{animation:fb1 1.2s cubic-bezier(.1,.8,.2,1) forwards;animation-delay:0.55s;width:0}
         
         @keyframes fb2 { 0%{width:0;opacity:0} 100%{width:118px;opacity:1} }
@@ -80,7 +80,7 @@
   <text x="144" y="104" class="t3"><tspan fill="#E0E6ED">Status: </tspan><tspan fill="#FF9900">CODING</tspan><tspan class="blink">_</tspan></text>
 
   <!-- Date -->
-  <text x="854" y="104" class="t6" text-anchor="end">v2026.04.15.0033</text>
+  <text x="854" y="104" class="t6" text-anchor="end">v2026.04.16.0033</text>
 </g>
 
 <!-- ============================================ -->
@@ -124,7 +124,7 @@
 
   <g class="anim" style="animation-delay:0.4s">
     <text x="40" y="382" class="t5">TypeScript</text>
-    <text x="848" y="382" class="t5" fill="#3178c6" text-anchor="end">51%</text>
+    <text x="848" y="382" class="t5" fill="#3178c6" text-anchor="end">50%</text>
     <rect x="180" y="372" width="620" height="7" rx="3" fill="#0A1220"/>
     <rect x="180" y="372" height="7" rx="3" fill="#3178c6" class="b0"/>
     <rect x="180" y="372" height="7" rx="3" fill="#3178c6" opacity=".4" filter="url(#gB)" class="b0"/>
@@ -132,7 +132,7 @@
 
   <g class="anim" style="animation-delay:0.48000000000000004s">
     <text x="40" y="420" class="t5">Lua</text>
-    <text x="848" y="420" class="t5" fill="#000080" text-anchor="end">18%</text>
+    <text x="848" y="420" class="t5" fill="#000080" text-anchor="end">20%</text>
     <rect x="180" y="410" width="620" height="7" rx="3" fill="#0A1220"/>
     <rect x="180" y="410" height="7" rx="3" fill="#000080" class="b1"/>
     <rect x="180" y="410" height="7" rx="3" fill="#000080" opacity=".4" filter="url(#gB)" class="b1"/>
