@@ -1,6 +1,6 @@
 <!-- BANNER -->
 <p align="center">
-  <img src="dist/banner_gd.svg?v=202609150024" alt="Banner" width="888" />
+  <img src="dist/banner_gd.svg?v=202609152000" alt="Banner" width="888" />
 </p>
 
 <!-- ABOUT ME -->

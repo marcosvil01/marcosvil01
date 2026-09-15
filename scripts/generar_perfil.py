@@ -60,7 +60,12 @@ def get_github_stats():
     }
     """ % USERNAME
 
-    response = requests.post("https://api.github.com/graphql", json={"query": query}, headers=HEADERS)
+    response = requests.post(
+        "https://api.github.com/graphql",
+        json={"query": query},
+        headers=HEADERS,
+        timeout=30,
+    )
     if response.status_code != 200:
         raise Exception(f"Query failed: {response.status_code}. Response: {response.text}")
 

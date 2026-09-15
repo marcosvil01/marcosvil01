@@ -3,7 +3,7 @@ name: Update Epic SVG Profile
 on:
   push:
     branches:
-      - main
+      - master
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -13,6 +13,8 @@ permissions:
 
 jobs:
   build:
+    # Do not trigger a second run from the commit created by this workflow.
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     
     steps:
