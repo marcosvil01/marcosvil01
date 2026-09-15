@@ -24,7 +24,7 @@
   @keyframes breathe { 0%,100%{opacity:.6} 50%{opacity:1} }
   @keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
   
-  /* MEGA-LOOP: 40s total, 4 scenarios of 10s each.
+  /* MEGA-LOOP: 20s total, 4 scenarios of 5s each.
      Scenario 1 (0-25%):   Creeper chases Steve straight across
      Scenario 2 (25-50%):  Creeper chases Steve straight across (repeat)
      Scenario 3 (50-75%):  Creeper explodes, Steve gets blasted
@@ -32,50 +32,50 @@
      
   @keyframes creeperMove { 
     /* Scenario 1: Run straight across */
-    0% { transform:translate(-100px, 89px) scaleX(1); } 
-    23% { transform:translate(1100px, 89px) scaleX(1); }
-    23.01% { transform:translate(-100px, 89px) scaleX(1); }
+    0% { transform:translate(-100px, 89px) scale(1.25); }
+    23% { transform:translate(1100px, 89px) scale(1.25); }
+    23.01% { transform:translate(-100px, 89px) scale(1.25); }
     
     /* Scenario 2: Run straight across */
-    25% { transform:translate(-100px, 89px) scaleX(1); }
-    48% { transform:translate(1100px, 89px) scaleX(1); }
-    48.01% { transform:translate(-100px, 89px) scaleX(1); }
+    25% { transform:translate(-100px, 89px) scale(1.25); }
+    48% { transform:translate(1100px, 89px) scale(1.25); }
+    48.01% { transform:translate(-100px, 89px) scale(1.25); }
     
     /* Scenario 3: Stop, explode */
-    50% { transform:translate(-100px, 89px) scaleX(1); }
-    59%, 71% { transform:translate(380px, 89px) scaleX(1); }
-    71.01% { transform:translate(-100px, 89px) scaleX(1); }
+    50% { transform:translate(-100px, 89px) scale(1.25); }
+    59%, 71% { transform:translate(380px, 89px) scale(1.25); }
+    71.01% { transform:translate(-100px, 89px) scale(1.25); }
     
     /* Scenario 4: Run, Steve turns and kills */
-    75% { transform:translate(-100px, 89px) scaleX(1); }
-    84%, 96% { transform:translate(380px, 89px) scaleX(1); }
-    97% { transform:translate(200px, 89px) scaleX(1); }
-    97.01%, 100% { transform:translate(-100px, 89px) scaleX(1); }
+    75% { transform:translate(-100px, 89px) scale(1.25); }
+    84%, 96% { transform:translate(380px, 89px) scale(1.25); }
+    97% { transform:translate(200px, 89px) scale(1.25); }
+    97.01%, 100% { transform:translate(-100px, 89px) scale(1.25); }
   }
   
   @keyframes steveMove { 
     /* Scenario 1: Run straight */
-    0% { transform:translate(-40px, 85px) scaleX(1); } 
-    23% { transform:translate(1150px, 85px) scaleX(1); }
-    23.01% { transform:translate(-40px, 85px) scaleX(1); }
+    0% { transform:translate(-40px, 85px) scale(1.25); }
+    23% { transform:translate(1150px, 85px) scale(1.25); }
+    23.01% { transform:translate(-40px, 85px) scale(1.25); }
     
     /* Scenario 2: Run straight */
-    25% { transform:translate(-40px, 85px) scaleX(1); }
-    48% { transform:translate(1150px, 85px) scaleX(1); }
-    48.01% { transform:translate(-40px, 85px) scaleX(1); }
+    25% { transform:translate(-40px, 85px) scale(1.25); }
+    48% { transform:translate(1150px, 85px) scale(1.25); }
+    48.01% { transform:translate(-40px, 85px) scale(1.25); }
     
     /* Scenario 3: Stop, gets blasted */
-    50% { transform:translate(-40px, 85px) scaleX(1); }
-    58.5%, 70% { transform:translate(440px, 85px) rotate(0deg) scaleX(1); }
+    50% { transform:translate(-40px, 85px) scale(1.25); }
+    58.5%, 70% { transform:translate(440px, 85px) rotate(0deg) scale(1.25); }
     /* Keep Steve off-camera after the blast, then reset him instantly. */
-    72%, 74% { transform:translate(600px, -50px) rotate(90deg) scaleX(1); }
-    74.01%, 75% { transform:translate(-40px, 85px) rotate(0deg) scaleX(1); }
+    72%, 74% { transform:translate(600px, -50px) rotate(90deg) scale(1.25); }
+    74.01%, 75% { transform:translate(-40px, 85px) rotate(0deg) scale(1.25); }
     
     /* Scenario 4: Steve runs, STOPS, turns around, pulls sword */
-    75% { transform:translate(-40px, 85px) scaleX(1); }
-    83.5%, 86% { transform:translate(490px, 85px) scaleX(1); }
-    87%, 96% { transform:translate(490px, 85px) scaleX(-1); }
-    96.01%, 100% { transform:translate(-40px, 85px) scaleX(1); }
+    75% { transform:translate(-40px, 85px) scale(1.25); }
+    83.5%, 86% { transform:translate(490px, 85px) scale(1.25); }
+    87%, 96% { transform:translate(490px, 85px) scale(-1.25, 1.25); }
+    96.01%, 100% { transform:translate(-40px, 85px) scale(1.25); }
   }
   
   /* Bouncing only while running forward */
@@ -237,30 +237,41 @@
   }
   
   .breathe { animation:breathe 4s ease-in-out infinite; }
-  .float { animation:floatSlow 5s ease-in-out infinite; }
+  .float { animation:floatSlow 5s ease-in-out infinite; opacity:.78; }
   
-  .creeper-pos { animation:creeperMove 40s linear infinite; }
-  .steve-pos { animation:steveMove 40s linear infinite; }
+  .creeper-pos { animation:creeperMove 20s linear infinite; }
+  .steve-pos { animation:steveMove 20s linear infinite; }
   
-  .bounce { animation:walkBounce 40s linear infinite; }
-  .sweat { animation:sweatDrop 40s linear infinite; }
+  .bounce { animation:walkBounce 20s linear infinite; }
+  .sweat { animation:sweatDrop 20s linear infinite; }
   
   /* Scenario 3 classes */
-  .creeper-fuse { animation:creeperFlash 40s linear infinite; }
-  .creeper-expand { animation:creeperSwell 40s linear infinite; transform-origin:7px 24px; }
-  .explosion { animation:blast 40s ease-out infinite; transform-origin:7px 10px; }
-  .crater-hole { animation:crater 40s step-end infinite; }
+  .creeper-fuse { animation:creeperFlash 20s linear infinite; }
+  .creeper-expand { animation:creeperSwell 20s linear infinite; transform-origin:7px 24px; }
+  .explosion { animation:blast 20s ease-out infinite; transform-origin:7px 10px; }
+  .crater-hole { animation:crater 20s step-end infinite; }
   
   /* Scenario 4 classes */
-  .sword { animation:swordAppear 40s ease-out infinite; transform-origin:8px 18px; }
-  .creeper-shake { animation:creeperShake 40s linear infinite; }
-  .creeper-die { animation:creeperDeath 40s ease-out infinite; transform-origin:7px 12px; }
-  .hit-effect { animation:hitSplash 40s ease-out infinite; transform-origin:center; }
+  .sword { animation:swordAppear 20s ease-out infinite; transform-origin:8px 18px; }
+  .creeper-shake { animation:creeperShake 20s linear infinite; }
+  .creeper-die { animation:creeperDeath 20s ease-out infinite; transform-origin:7px 12px; }
+  .hit-effect { animation:hitSplash 20s ease-out infinite; transform-origin:center; }
   
-  .limb-L { animation:legA 40s linear infinite; }
-  .limb-R { animation:legB 40s linear infinite; }
+  .limb-L { animation:legA 20s linear infinite; }
+  .limb-R { animation:legB 20s linear infinite; }
   .c-leg { transform-origin:3px 0px; }
   .s-leg { transform-origin:2px 0px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .float, .breathe, .creeper-pos, .steve-pos, .bounce, .sweat,
+    .creeper-fuse, .creeper-expand, .explosion, .crater-hole,
+    .sword, .creeper-shake, .creeper-die, .hit-effect, .limb-L, .limb-R {
+      animation:none !important;
+    }
+    .creeper-pos { transform:translate(380px, 89px) scale(1.25); }
+    .steve-pos { transform:translate(440px, 85px) scale(1.25); }
+    .explosion, .crater-hole, .hit-effect, .sword, .sweat { display:none; }
+  }
 </style>
 
 <!-- Background -->
@@ -315,7 +326,7 @@
 
 <g transform="translate(0, -15)">
   <text x="444" y="55" text-anchor="middle" font-family="'Orbitron',sans-serif" font-size="28" font-weight="900" fill="#E0E6ED" letter-spacing="3" filter="url(#subtleGlow)">MARCOS</text>
-  <text x="444" y="78" text-anchor="middle" font-family="'Fira Code',monospace" font-size="11" fill="#5B7C99" letter-spacing="2">DEV · GAMER · LIFTER · EXPLORER</text>
+  <text x="444" y="78" text-anchor="middle" font-family="'Fira Code',monospace" font-size="11" fill="#7A9AB5" letter-spacing="2">DEV · GAMER · LIFTER · EXPLORER</text>
 </g>
 
 <g transform="translate(580, 22)">

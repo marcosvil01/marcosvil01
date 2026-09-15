@@ -124,7 +124,7 @@ def create_svg(stats):
     PURPLE  = "#B026FF"
     ORANGE  = "#FF9900"
     WHITE   = "#E0E6ED"
-    MUTED   = "#5B7C99"
+    MUTED   = "#7A9AB5"
 
     # ---- Calculate dynamic heights ----
     header_h = 100
@@ -371,6 +371,9 @@ def create_about_me_svg():
   @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap');
   @keyframes fadeIn { 0%{opacity:0;transform:translateY(6px)} 100%{opacity:1;transform:translateY(0)} }
   .fade { animation: fadeIn 0.8s ease-out forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade { animation:none !important; opacity:1 !important; transform:none !important; }
+  }
 </style>
 
 <rect width="888" height="200" rx="10" fill="url(#aboutBg)" stroke="#1E293B" stroke-width="1"/>
@@ -421,7 +424,8 @@ def create_about_me_svg():
   <rect x="328" y="170" width="55" height="22" rx="4" fill="none" stroke="#F0ECE4" stroke-width="1" opacity="0.4"/>
   <text x="355" y="185" text-anchor="middle" font-family="'Fira Code',monospace" font-size="10" fill="#F0ECE4" opacity="0.7">dogs</text>
 </g>
-</svg>"""
+</svg>
+"""
 
 def update_readme_timestamp():
     """Updates the README.md to include a cache-busting timestamp on SVG links."""

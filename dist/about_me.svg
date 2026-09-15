@@ -10,6 +10,9 @@
   @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&amp;family=Inter:wght@400;500;600&amp;display=swap');
   @keyframes fadeIn { 0%{opacity:0;transform:translateY(6px)} 100%{opacity:1;transform:translateY(0)} }
   .fade { animation: fadeIn 0.8s ease-out forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .fade { animation:none !important; opacity:1 !important; transform:none !important; }
+  }
 </style>
 
 <rect width="888" height="200" rx="10" fill="url(#aboutBg)" stroke="#1E293B" stroke-width="1"/>
