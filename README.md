@@ -1,16 +1,16 @@
 <!-- BANNER -->
 <p align="center">
-  <img src="dist/banner_gd.svg?v=202609230022" alt="Animated Minecraft-style banner for Marcos, developer and gamer" width="888" />
+  <img src="dist/banner_gd.svg?v=202609240023" alt="Animated Minecraft-style banner for Marcos, developer and gamer" width="888" />
 </p>
 
 <!-- ABOUT ME -->
 <p align="center">
-  <img src="dist/about_me.svg?v=202609230022" alt="About Marcos, a fullstack developer from Spain" width="888" />
+  <img src="dist/about_me.svg?v=202609240023" alt="About Marcos, a fullstack developer from Spain" width="888" />
 </p>
 
 <!-- STATS DASHBOARD -->
 <p align="center">
-  <img src="dist/perfil_hud.svg?v=202609230022" alt="GitHub statistics dashboard for Marcos" width="888" />
+  <img src="dist/perfil_hud.svg?v=202609240023" alt="GitHub statistics dashboard for Marcos" width="888" />
 </p>
 
 <br>
